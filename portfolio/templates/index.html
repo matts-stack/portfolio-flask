@@ -1,33 +1,252 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Matthew Bryan | Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Matthew Bryan — Portfolio</title>
+    <meta name="description" content="IT Professional | Data Analyst | Developer" />
+    <style>
+      :root{--accent:#0b69ff;--muted:#6b7280;--card:#f8fafc}
+      *{box-sizing:border-box}
+      body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;color:#0f172a;background:#ffffff}
+      header{background:linear-gradient(90deg,rgba(11,105,255,0.08),transparent);padding:32px 16px;border-bottom:1px solid #eef2ff}
+      .container{max-width:1100px;margin:0 auto;padding:0 16px}
+      .nav{display:flex;align-items:center;justify-content:space-between}
+      .brand{display:flex;align-items:center;gap:12px}
+      .brand h1{margin:0;font-size:20px}
+      nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600}
+      .hero{display:flex;gap:24px;align-items:center;padding:48px 0}
+      .hero .left{flex:1}
+      .hero h2{margin:0;font-size:28px}
+      .tagline{color:var(--muted);margin-top:8px}
+      .cta{margin-top:18px}
+      .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+      .profile-pic{width:140px;height:140px;border-radius:20px;background:linear-gradient(135deg,#c7ddff,#eef6ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b3a8c}
+
+      section{padding:40px 0;border-top:1px solid #f1f5f9}
+      .grid{display:grid;gap:20px}
+      .skills{grid-template-columns:repeat(4,1fr)}
+      .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.03)}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .project .meta{color:var(--muted);font-size:13px;margin-bottom:6px}
+      .timeline{display:flex;flex-direction:column;gap:14px}
+      .timeline-item{display:flex;gap:12px;align-items:flex-start}
+      .timeline-item time{font-weight:700;color:var(--accent);min-width:92px}
+      footer{padding:28px 0;background:#fbfdff;border-top:1px solid #eef2ff}
+
+      @media (max-width:880px){
+        .hero{flex-direction:column;align-items:flex-start}
+        .projects{grid-template-columns:1fr}
+        .skills{grid-template-columns:repeat(2,1fr)}
+        nav a{margin-left:10px}
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <h1>Matthew Bryan</h1>
-        <p>IT & Data Analyst | Applications & Systems Support</p>
+      <div class="container nav">
+        <div class="brand">
+          <div style="width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,#0b69ff,#5ac8ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:800">MB</div>
+          <div>
+            <h1>Matthew Bryan</h1>
+            <div style="font-size:12px;color:var(--muted)">IT Professional · Data Analyst · Developer</div>
+          </div>
+        </div>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
     </header>
-    <main>
-        <section>
-            <h2>About Me</h2>
-            <p>I’m an IT professional with 5+ years in IT support, data analysis, and system administration. Skilled in Python, SQL, Power BI, and enterprise apps.</p>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li>📊 Wine Quality Prediction (ML)</li>
-                <li>📈 Power BI Retail Dashboard</li>
-                <li>🖥️ Server Migration SOP</li>
+
+    <main class="container">
+      <section class="hero">
+        <div class="left">
+          <h2>Hi — I’m Matthew. I build reliable systems and data-driven solutions.</h2>
+          <p class="tagline">Problem-solver with 5+ years in IT support, systems administration, and applied data science. I design, implement and maintain production-ready applications and analytical pipelines.</p>
+          <div class="cta">
+            <a class="btn" href="/static/resume.pdf" target="_blank">Download Resume</a>
+            <a class="btn" href="#projects" style="margin-left:10px;background:#0f172a;">View Projects</a>
+          </div>
+        </div>
+        <div class="right" style="text-align:center">
+          <div class="profile-pic">MB</div>
+          <div style="margin-top:12px;color:var(--muted);font-size:14px">Regina, SK · matthewabryan@yahoo.com</div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="grid" style="grid-template-columns:1fr 320px;gap:28px;align-items:start">
+          <div class="card">
+            <h3>About Me</h3>
+            <p>I'm an IT professional and data analyst with a BSc in Information & Communication Technology and a post-grad certificate in Artificial Intelligence & Data Analysis. I enjoy taking raw data and systems, improving reliability, and turning them into meaningful business insights.</p>
+            <ul style="margin-top:8px;color:var(--muted)">
+              <li>5+ years: IT support, system administration, and development</li>
+              <li>Strong with Python, SQL, Power BI, and system integrations</li>
+              <li>Experience with server migrations, POS systems, and web development</li>
             </ul>
-        </section>
-        <section>
-            <h2>Contact</h2>
-            <p>Email: matthewabryan@yahoo.com</p>
-            <p>LinkedIn: [Your LinkedIn Link]</p>
-        </section>
+          </div>
+
+          <aside>
+            <div class="card">
+              <h4>Quick Facts</h4>
+              <p style="margin:6px 0">Email: <a href="mailto:matthewabryan@yahoo.com">matthewabryan@yahoo.com</a></p>
+              <p style="margin:6px 0">Phone: 639-997-8692</p>
+              <p style="margin:6px 0">Location: Regina, SK</p>
+              <p style="margin:6px 0">Education: BSc ICT · Post-grad AI & Data Analysis</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="grid skills" style="margin-top:12px">
+          <div class="card">
+            <strong>Programming & Data</strong>
+            <p style="color:var(--muted);margin-top:8px">Python · Pandas · Scikit-learn · SQL · Power BI · Machine Learning · Jupyter</p>
+          </div>
+          <div class="card">
+            <strong>Web & Dev</strong>
+            <p style="color:var(--muted);margin-top:8px">HTML · CSS · JavaScript · PHP · Flask · MVC</p>
+          </div>
+          <div class="card">
+            <strong>Systems & Networking</strong>
+            <p style="color:var(--muted);margin-top:8px">Windows/Linux Servers · Active Directory · Virtualization · Networking</p>
+          </div>
+          <div class="card">
+            <strong>Tools</strong>
+            <p style="color:var(--muted);margin-top:8px">Git · Docker · Excel · PowerShell · VS Code</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h3>Projects</h3>
+        <div class="grid projects" style="margin-top:14px">
+          <!-- Project card: add more or generate server-side with Jinja -->
+          <article class="card project">
+            <div class="meta">Data & AI · 2025</div>
+            <h4>Wine Quality Prediction</h4>
+            <p style="color:var(--muted)">Built multiple ML models to predict wine quality using physicochemical features. Included preprocessing, feature engineering, model comparison, and business-focused conclusions.</p>
+            <p style="margin-top:8px"><strong>Tech:</strong> Python, Scikit-learn, Pandas, Power BI</p>
+            <p style="margin-top:8px"><a href="#">GitHub →</a> · <a href="#">Report (PDF)</a></p>
+          </article>
+
+          <article class="card project">
+            <div class="meta">NLP · 2025</div>
+            <h4>Twitter Sentiment Analysis (Multi-class)</h4>
+            <p style="color:var(--muted)">Multi-model approach: CNN, BiLSTM, and TextBlob baseline for multi-class sentiment classification. Performed tokenization, embedding, and evaluation.</p>
+            <p style="margin-top:8px"><strong>Tech:</strong> Python, TensorFlow/Keras, NLTK, Subword Tokenizers</p>
+            <p style="margin-top:8px"><a href="#">GitHub →</a></p>
+          </article>
+
+          <article class="card project">
+            <div class="meta">Web · 2023</div>
+            <h4>Quotation Management System</h4>
+            <p style="color:var(--muted)">Full-stack quotation tool with role-based access, PDF generation, and reporting.</p>
+            <p style="margin-top:8px"><strong>Tech:</strong> PHP, MySQL, JavaScript</p>
+            <p style="margin-top:8px"><a href="#">Demo →</a> · <a href="#">Source →</a></p>
+          </article>
+
+          <article class="card project">
+            <div class="meta">E-Commerce · 2023</div>
+            <h4>Sangster's Book Store — E-Commerce</h4>
+            <p style="color:var(--muted)">Website + network configuration and POS integration for a multi-location bookstore.</p>
+            <p style="margin-top:8px"><strong>Tech:</strong> WordPress, PHP, Networking</p>
+            <p style="margin-top:8px"><a href="#">Live Site →</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <h3>Experience Timeline</h3>
+        <div class="timeline" style="margin-top:12px">
+          <div class="timeline-item card">
+            <time>2024</time>
+            <div>
+              <strong>Server Migration (Lead)</strong>
+              <div style="color:var(--muted);font-size:13px">Led Windows & Linux migrations; improved uptime and backup reliability.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item card">
+            <time>2021–2023</time>
+            <div>
+              <strong>Web & E-commerce Projects</strong>
+              <div style="color:var(--muted);font-size:13px">Built sites, integrated POS systems, and managed local networks.</div>
+            </div>
+          </div>
+
+          <div class="timeline-item card">
+            <time>2019–2021</time>
+            <div>
+              <strong>Network & Support</strong>
+              <div style="color:var(--muted);font-size:13px">On-site technician work, client support and hardware installs.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education">
+        <h3>Education & Certifications</h3>
+        <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:12px">
+          <div class="card">
+            <strong>BSc — Information & Communication Technology</strong>
+            <div style="color:var(--muted);margin-top:6px">Vector Technology Institute</div>
+          </div>
+          <div class="card">
+            <strong>Post-grad — Artificial Intelligence & Data Analysis</strong>
+            <div style="color:var(--muted);margin-top:6px">Saskatchewan Polytechnic (2024–2025)</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h3>Contact</h3>
+        <div class="grid" style="grid-template-columns:1fr 360px;gap:22px;margin-top:12px">
+          <div class="card">
+            <p>If you'd like to work together, get in touch — I usually reply within a day.</p>
+            <p style="margin-top:8px"><strong>Email</strong><br><a href="mailto:matthewabryan@yahoo.com">matthewabryan@yahoo.com</a></p>
+            <p style="margin-top:8px"><strong>Phone</strong><br>639-997-8692</p>
+            <p style="margin-top:8px"><strong>GitHub</strong><br><a href="#">github.com/yourusername</a></p>
+            <p style="margin-top:8px"><strong>LinkedIn</strong><br><a href="#">linkedin.com/in/yourprofile</a></p>
+          </div>
+
+          <div class="card">
+            <h4>Quick Contact Form</h4>
+            <!-- Example: change action to your Flask route: url_for('contact') -->
+            <form action="/contact" method="POST">
+              <label style="display:block;margin-top:6px;font-weight:600">Name</label>
+              <input name="name" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6eefc;margin-top:6px">
+              <label style="display:block;margin-top:10px;font-weight:600">Email</label>
+              <input name="email" type="email" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6eefc;margin-top:6px">
+              <label style="display:block;margin-top:10px;font-weight:600">Message</label>
+              <textarea name="message" required rows="4" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6eefc;margin-top:6px"></textarea>
+              <button class="btn" type="submit" style="margin-top:10px">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+
+    <footer>
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+        <div style="color:var(--muted)">© Matthew Bryan — Built with ❤️ · Regina, SK</div>
+        <div style="color:var(--muted)">Made with HTML & CSS • Add this file to <code>templates/portfolio.html</code> and serve via Flask.</div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',function(e){
+          const href=this.getAttribute('href');
+          if(href.startsWith('#')){e.preventDefault();document.querySelector(href).scrollIntoView({behavior:'smooth'});}
+        });
+      });
+    </script>
+  </body>
 </html>
